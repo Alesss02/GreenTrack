@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenTrack</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="GreenTrack Logo">
+
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">Chi Siamo</a></li>
+                    <li><a href="#services">Servizi</a></li>
+                    <li><a href="#contacts">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Benvenuti in GreenTrack</h2>
+            <p>La tua destinazione per soluzioni di qualità.</p>
+            <a href="#about" class="cta-button">Scopri di più</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>CHI SIAMO</h2>
+            <p>GreenTrack offre un servizio completo per lo smaltimento dei rifiuti aziendali. Ci occupiamo di ritirare direttamente i rifiuti presso le aziende che richiedono il nostro servizio, gestendo ogni fase del processo con professionalità ed efficienza. Le aziende non devono preoccuparsi di nulla: dalla raccolta al corretto smaltimento, pensiamo a tutto noi, garantendo un impatto ambientale minimo e un servizio conforme alle normative vigenti.</p>
+        </div>
+             </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2>SERVIZI</h2>
+            <div class="service-box">
+                <div class="service">
+                    <h3>Consulenza Personalizzata</h3>
+                    <p>Offriamo consulenze mirate per identificare le migliori soluzioni di smaltimento, adattandole alle esigenze specifiche di ogni azienda.</p>
+                </div>
+                <div class="service">
+                    <h3>Smaltimento rifiuti standardizzati</h3>
+                    <p>Offriamo al cliente la possibilità di selezionare velocemente dal nostro elenco il tipo di rifiuto che vuole smaltire per avere un responso immediato sui costi di smaltimento, trasporto e tempistiche di ritiro!</p>
+                </div>
+                <div class="service">
+                    <h3>Supporto Tecnico</h3>
+                    <p>Il nostro team tecnico è sempre disponibile per assistere le aziende in ogni fase del processo di smaltimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="contacts" class="section">
+        <div class="container">
+            <h2>CONTATTACI</h2>
+            <form action="thankyou.html" method="GET">
+                <input type="text" placeholder="Il tuo Nome" required>
+                <input type="email" placeholder="La tua Email" required>
+                <textarea placeholder="Il tuo Messaggio" rows="4" required></textarea>
+                <button type="submit">Invia</button>
+            </form>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 GreenTrack. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+    
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+    
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+    
+</body>
+</html>
